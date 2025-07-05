@@ -1,0 +1,182 @@
+/* ========== Variáveis de Tema ========== */
+:root {
+  --bg: #0f172a;
+  --fg: #f1f5f9;
+  --highlight: #14b8a6;
+  --muted: #334155;
+  --radius: 6px;
+  --spacing: 1rem;
+  --max-width: 1000px;
+}
+
+/* ========== Reset & Base ========== */
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+ul { list-style: none; }
+
+/* ========== Containers ========== */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing) 0;
+}
+
+/* ========== Header ========== */
+header {
+  background: var(--muted);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing) 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: var(--spacing);
+  border: 2px solid var(--highlight);
+}
+.logo h1 {
+  font-size: 1.25rem;
+}
+.logo p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+nav a {
+  margin-left: var(--spacing);
+  font-weight: 500;
+}
+
+/* ========== Main Sections ========== */
+h2 {
+  font-size: 1.75rem;
+  border-bottom: 3px solid var(--highlight);
+  padding-bottom: 0.25rem;
+  margin-bottom: var(--spacing);
+}
+
+/* Sobre mim */
+#sobre p + p {
+  margin-top: 0.75rem;
+}
+
+/* Habilidades */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tags li {
+  background: var(--muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+}
+
+/* Projetos */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+.cards article {
+  background: var(--muted);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cards img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.cards h3 {
+  margin: var(--spacing) var(--spacing) 0.5rem;
+  font-size: 1.1rem;
+}
+.cards p {
+  margin: 0  var(--spacing) var(--spacing);
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+/* Aside */
+aside {
+  background: var(--muted);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  margin-top: var(--spacing);
+}
+aside h2 {
+  margin-bottom: 0.75rem;
+}
+aside h3 {
+  color: var(--highlight);
+  margin-top: var(--spacing);
+}
+aside p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+aside ul li + li {
+  margin-top: 0.3rem;
+}
+
+/* ========== Footer ========== */
+footer {
+  background: var(--muted);
+  text-align: center;
+  padding: var(--spacing) 0;
+  margin-top: var(--spacing);
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+footer a {
+  color: var(--highlight);
+}
+
+/* ========== Responsividade ========== */
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing);
+  }
+  #sobre, #habilidades, #projetos { margin-top: 0; }
+  aside { margin-top: 0; }
+}
+
+@media (max-width: 767px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    margin-top: 0.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
